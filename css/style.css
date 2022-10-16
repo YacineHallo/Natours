@@ -34,56 +34,51 @@ op de content en komen de padding en de border er nog BIJ */
   /* Zie voor het snijden ook:https://bennettfeely.com/clippy/ */
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative; }
-
-.header__logo-box {
-  /* om de position absolute te kunnen gebruiken moet je 
-    bij de betreffende parent position relative gebruiken! */
-  position: absolute;
-  top: 4rem;
-  left: 4rem; }
-
-.header__logo {
-  /* wanneer je de height zet past de browser automatisch de width aan */
-  height: 3.5rem; }
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center; }
+  .header__logo-box {
+    /* om de position absolute te kunnen gebruiken moet je 
+        bij de betreffende parent position relative gebruiken! */
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    /* wanneer je de height zet past de browser automatisch de width aan */
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
 
 .heading-primary {
-  color: #fff;
+  color: white;
   text-transform: uppercase;
   backface-visibility: hidden;
   /* dit is om de animation die hieronder is 
 beschreven minder shaked.... */
   margin-bottom: 1.6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    /* De animatie die hier wordt opgeroepen "moveInLeft is ergens hieronder bj 
+        @keyframes beschreven" 
+        Je kunt deze ook gewoon opnemen doo animate: moveinLeft 1s ease-out;*/
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* hiermee kan je aangeven of de animatie in het bgein sneller gaat of bijv aan het eind etc.*/
+    /* animation-delay: 3s; > dan begint de animation pas 3 seconde na starten website*/
+    /* animation-iteration-count: 3; > dan gebeurt de animation 3 keer (je kunt m ook op oneindig zetten*/ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out; }
 
 /* ANIMATIONS zie hfdstuk 8 Creating Cool CSS Animations*/
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  /* De animatie die hier wordt opgeroepen "moveInLeft is ergens hieronder bj 
-    @keyframes beschreven" 
-    Je kunt deze ook gewoon opnemen doo animate: moveinLeft 1s ease-out;*/
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  /* hiermee kan je aangeven of de animatie in het bgein sneller gaat of bijv aan het eind etc.*/
-  /* animation-delay: 3s; > dan begint de animation pas 3 seconde na starten website*/
-  /* animation-iteration-count: 3; > dan gebeurt de animation 3 keer (je kunt m ook op oneindig zetten*/ }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
-  animation: moveInRight 1s ease-out; }
-
 /* 
 Je geeft een naam moveInLeft.
 Deze neem je dan weer mee bij de class waar je de animation op wilt hebben,
@@ -126,8 +121,7 @@ Een goeie manier om de animatie te gebruiken is bij hover .class:hover */
 /* zie de werking van animation moveInButton bij de BUTTON */
 /* EINDE ANIMATIONS */
 /* BUTTON */
-.btn:link,
-.btn:visited {
+.btn:link, .btn:visited {
   font-size: 1.6rem;
   text-transform: uppercase;
   text-decoration: none;
@@ -140,14 +134,13 @@ Een goeie manier om de animatie te gebruiken is bij hover .class:hover */
 .btn:hover {
   transform: translateY(-0.3rem);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
 
 .btn:active {
   transform: translateY(-0.1rem);
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2); }
-
-.btn--white {
-  background-color: #fff;
-  color: #777; }
 
 .btn::after {
   /* je hebt bij een after altijd content nodig > zie hieronder. ook al laat je die leeg */
@@ -162,13 +155,6 @@ Een goeie manier om de animatie te gebruiken is bij hover .class:hover */
   z-index: -1;
   transition: all 0.4s; }
 
-.btn-white::after {
-  background-color: white; }
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
-
 .btn--animated {
   animation: moveInButton 1s ease-out .75s;
   animation-fill-mode: backwards;
@@ -176,3 +162,9 @@ Een goeie manier om de animatie te gebruiken is bij hover .class:hover */
         animatie pas 0.75s begit na opstarten site
         animation-fill-mode backwards houdt in dat ie 
         de eertse positie bij de moveinButton begint in die 0.75s...*/ }
+
+.btn-white {
+  background-color: white;
+  color: #777; }
+  .btn-white::after {
+    background-color: white; }
