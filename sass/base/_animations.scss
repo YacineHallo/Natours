@@ -1,0 +1,63 @@
+//ANIMATIONS zie hfdstuk 8 Creating Cool CSS Animations
+
+
+
+//Je geeft een naam moveInLeft.
+//Deze neem je dan weer mee bij de class waar je de animation op wilt hebben,
+//De transform is vanaf de situatie dat de content van de betreffende class nu staat
+//en dat is in dit geval in het midden, dus wil je dat deze links ervan begint
+//moet je translateX en dan een minwaarde meegeven, zie hieronder.
+//Je zou ook nog de  functie rotate kunnen toevoegen bijv  transform:rotate(90deg)
+//Je kunt de animatie moveinLeft op meerdere plekken gebruiken
+// Een goeie manier om de animatie te gebruiken is bij hover .class:hover 
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem) rotate(50deg)
+    }
+
+    80% {
+        transform: translateX(1rem)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10rem)
+    }
+
+    80% {
+        transform: translateX(-1rem)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInButton {
+    0% {
+        opacity: 0;
+        transform: translateY(10rem)
+    }
+
+    80% {
+        transform: translateY(0)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+//zie de werking van animation moveInButton bij de BUTTON
+//EINDE ANIMATIONS 
