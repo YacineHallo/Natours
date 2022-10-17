@@ -23,11 +23,12 @@ body {
         font-size: 6rem;
         font-weight: 400;
         letter-spacing: 3.5rem;
+
         //De animatie die hier wordt opgeroepen "moveInLeft is ergens hieronder bij  @keyframes beschreven" 
         //Je kunt deze ook gewoon opnemen doo animate: moveinLeft 1s ease-out;
-       // animation-name: moveInLeft;
-        //animation-duration: 1s;
-        //animation-timing-function: ease-out;
+       animation-name: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
         /// hiermee kan je aangeven of de animatie in het bgein sneller gaat of bijv aan het eind etc.
         //animation-delay: 3s; > dan begint de animation pas 3 seconde na starten website
         //animation-iteration-count: 3; > dan gebeurt de animation 3 keer (je kunt m ook op oneindig zetten
