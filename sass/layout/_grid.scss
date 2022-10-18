@@ -2,7 +2,7 @@
 
 .row {
     max-width: $grid-width;
-    background-color: yellow;
+    //background-color: yellow;
     margin: 0 auto;
 
     //alles behalve last child vandaar de NOT
@@ -15,7 +15,7 @@
     [class^="col-"] // dit betekent iedere class ide begint met "col-"
 
         {
-        background-color: rgb(30, 0, 255);
+        //background-color: rgb(30, 0, 255);
         float: left;
 
         &:not(:last-child) {
