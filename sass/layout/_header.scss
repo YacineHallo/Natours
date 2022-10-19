@@ -9,14 +9,13 @@
 //Zie voor het snijden ook:https://bennettfeely.com/clippy/
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     position: relative;
-
+   
     &__logo-box {
 // om de position absolute te kunnen gebruiken moet je 
 //bij de betreffende parent position relative gebruiken! 
-//position: absolute;
-//top: 4rem;
-//left: 4rem;
-
+position: absolute;
+top: 4rem;
+left: 4rem;
     }
 
     &__logo {
