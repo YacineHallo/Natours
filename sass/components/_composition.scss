@@ -32,7 +32,7 @@
             //namelijk de outline-offset bij parent element plaatsen, net als de transition,
             outline: 1.5rem solid $color-primary-dark;
             transform: scale(1.05) translateY(-.5rem);
-            box-shadow: 0 2.5rem 4rem rgba($color-black, .5);
+            box-shadow: $box-shadow-light;
             z-index: 3;
         }
 
