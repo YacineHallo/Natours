@@ -1,0 +1,74 @@
+.story {
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: $box-shadow-default;
+    background-color: rgba($color-white, .6);
+    border-radius: 3px;
+    font-size: $default-font-size;
+    padding:6rem;
+    padding-left: 9rem;
+    //skew het hele block > nadeel nu gaan de text en figure ook schuin staan
+    // dat moet dus worden opgelost door..
+    transform: skewX(-12deg);
+
+
+
+    
+
+    &__shape {
+        width: 15rem;
+        height: 15rem;
+        float: left;
+        position: relative;
+      
+        // bij de shape-outside is de eerst waarde de radius (die zal bij 15 rem, 7,5 zijn
+        // die tweede waarde bepalen vanaf waar de waarde van de radius begint  > hier dus halverwege
+        // ik sanp eigenlijk niet waarom er niet gewoon dit wordt gedaan
+        // >  border-radius: 100px; > omdat de text er dan niet omheen gaat, daar is die shape-outside voor
+        -webkit-shape-outside: circle(50% at 50% 50%); 
+        shape-outside: circle(50% at 50% 50%);
+        //om het nu een circel te maken wordt er clip path gebruikt
+        clip-path:circle(50% at 50% 50%);
+        transform: translateX(-3rem) skewX(12deg);
+    }
+
+    &__img{
+     
+        height:100%;
+        transform: translateX(-4rem) scale(1.4);
+        transition: all .5s;
+
+
+    }
+
+    &__text{
+        transform: skewX(12deg);  
+
+    }
+
+    &__caption{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -0%);
+        color:$color-white;
+        text-transform: uppercase;
+        text-align: center;
+        opacity: 0;
+        transition: all .5s;
+        backface-visibility: hidden;
+       
+    }
+&:hover &__caption{
+    opacity: 1;
+    transform:translate(-50%, -50%);
+}
+&:hover &__img{
+    transform: translateX(-4rem) scale(1);
+   filter: blur(3px) brightness(80%);
+}
+
+}
+.mary_marginbottom{
+    margin-bottom: 10rem;
+}
