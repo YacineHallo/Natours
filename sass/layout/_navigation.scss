@@ -1,0 +1,89 @@
+.navigation{
+
+    &__background{
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        //hieronder fixed en middels de top en de right bepaal je WAAR op 
+        //de pagina het staat. Met de z-index zorg je dat deze altijd de bovenste "laag" is.
+        // bij de button is de z-index nog hoger gemaakt, dus die zie je
+        position: fixed;
+        top:6.5rem;
+        right: 6.5rem;   
+        z-index: 1000;   
+        background-image: radial-gradient($color-primary-light, $color-primary-dark);
+        transform: scale(80);
+    }
+    &__button{
+        background-color: $color-white;
+        height: 7rem;
+        width: 7rem;
+        position: fixed;
+        top:6rem;
+        right:6rem;    
+        border-radius: 50%; 
+        z-index:2000;   
+    }
+
+    &__checkbox{
+      display: none;  
+    }
+
+    &__nav{
+        height: 100vh;
+        width:100%;
+        position: fixed;
+        top:0;
+        right:0;
+        z-index: 1500;
+
+    }
+
+     &__list{
+        @include centerhorizontalvertical;
+        list-style: none;
+        text-align: center;
+
+        
+    }
+    &__item{
+        margin: 1rem;
+        
+    }
+    &__link{
+        &:link,
+        &:visited{
+            display: inline-block;
+     font-size: 3rem;
+     font-weight: 300;
+     padding: 1rem 2rem;
+     color: $color-white;
+     text-transform: uppercase;
+     text-decoration: none;
+     // dit is om de schuine lijn ste krijigen bij de naviagtie items. om effect te zien, geef je 
+     // waar nu een transparent staat eerst een kleur, wanneer het goed werkt, vervang je de kleur door transaprent
+     background-image: linear-gradient(120deg, transparent 0%,transparent 50%,  $color-white 50%);
+     //de background-size groter dan 100 % maken, dan zie je steeds minder (hoe hoger) van de $color-white van de background-image
+     background-size: 220%;
+     transition: all .4s;
+
+span{
+    display: inline-block;
+    margin-right: 1.5rem;
+}
+
+    }
+    &:hover,
+    &:active{
+        //let op: jonas heeft hieronder niet background-size maar background-position...., effect lijkt hetzelfde
+        background-position: 100%;
+        color:$color-primary;
+        transform: translateX(1rem);
+
+    }
+        
+    }
+    
+   
+
+}
