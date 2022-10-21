@@ -1,6 +1,6 @@
-.navigation{
+.navigation {
 
-    &__background{
+    &__background {
         width: 6rem;
         height: 6rem;
         border-radius: 50%;
@@ -8,82 +8,104 @@
         //de pagina het staat. Met de z-index zorg je dat deze altijd de bovenste "laag" is.
         // bij de button is de z-index nog hoger gemaakt, dus die zie je
         position: fixed;
-        top:6.5rem;
-        right: 6.5rem;   
-        z-index: 1000;   
+        top: 6.5rem;
+        right: 6.5rem;
+        z-index: 1000;
         background-image: radial-gradient($color-primary-light, $color-primary-dark);
-        transform: scale(80);
+        //transform: scale(80);
+        //zie easings.net
+        transition: transform .8s cubic-bezier(0.83, 0, 0.17, 1);
     }
-    &__button{
+
+    &__button {
         background-color: $color-white;
         height: 7rem;
         width: 7rem;
         position: fixed;
-        top:6rem;
-        right:6rem;    
-        border-radius: 50%; 
-        z-index:2000;   
+        top: 6rem;
+        right: 6rem;
+        border-radius: 50%;
+        z-index: 2000;
+        box-shadow: $box-shadow-default;
     }
 
-    &__checkbox{
-      display: none;  
+    &__checkbox {
+        display: none;
     }
 
-    &__nav{
+    &__nav {
         height: 100vh;
-        width:100%;
+        width: 0;
         position: fixed;
-        top:0;
-        right:0;
+        top: 0;
+       left: 0;
         z-index: 1500;
+        //met opacity alone kom je er niet, want al zie je niks, de links blijven nog werken (je ziet af en toe het klikhandje
+        opacity: 0;
+        transition: all .8s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 
     }
 
-     &__list{
+    &__list {
         @include centerhorizontalvertical;
         list-style: none;
         text-align: center;
 
-        
+
     }
-    &__item{
+
+    &__item {
         margin: 1rem;
-        
+
     }
-    &__link{
+
+    &__link {
+
         &:link,
-        &:visited{
+        &:visited {
             display: inline-block;
-     font-size: 3rem;
-     font-weight: 300;
-     padding: 1rem 2rem;
-     color: $color-white;
-     text-transform: uppercase;
-     text-decoration: none;
-     // dit is om de schuine lijn ste krijigen bij de naviagtie items. om effect te zien, geef je 
-     // waar nu een transparent staat eerst een kleur, wanneer het goed werkt, vervang je de kleur door transaprent
-     background-image: linear-gradient(120deg, transparent 0%,transparent 50%,  $color-white 50%);
-     //de background-size groter dan 100 % maken, dan zie je steeds minder (hoe hoger) van de $color-white van de background-image
-     background-size: 220%;
-     transition: all .4s;
+            width: 100%;
+            font-size: 3rem;
+            font-weight: 300;
+            padding: 1rem 2rem;
+            color: $color-white;
+            text-transform: uppercase;
+            text-decoration: none;
+            // dit is om de schuine lijn ste krijigen bij de naviagtie items. om effect te zien, geef je 
+            // waar nu een transparent staat eerst een kleur, wanneer het goed werkt, vervang je de kleur door transaprent
+            background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
+            //de background-size groter dan 100 % maken, dan zie je steeds minder (hoe hoger) van de $color-white van de background-image
+            background-size: 220%;
+            transition: all .4s;
 
-span{
-    display: inline-block;
-    margin-right: 1.5rem;
-}
+            span {
+                display: inline-block;
+                margin-right: 1.5rem;
+            }
+
+        }
+
+        &:hover,
+        &:active {
+            //let op: jonas heeft hieronder niet background-size maar background-position...., effect lijkt hetzelfde
+            background-position: 100%;
+            color: $color-primary;
+            transform: translateX(1rem);
+
+        }
 
     }
-    &:hover,
-    &:active{
-        //let op: jonas heeft hieronder niet background-size maar background-position...., effect lijkt hetzelfde
-        background-position: 100%;
-        color:$color-primary;
-        transform: translateX(1rem);
+
+    &__checkbox:checked~&__background {
+
+        transform: scale(80);
+
 
     }
-        
-    }
-    
-   
 
+    &__checkbox:checked~&__nav {
+
+        opacity: 1;
+        width: 100%;
+    }
 }
