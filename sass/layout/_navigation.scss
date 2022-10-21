@@ -27,6 +27,8 @@
         border-radius: 50%;
         z-index: 2000;
         box-shadow: $box-shadow-default;
+        text-align: center;
+        cursor:pointer;
     }
 
     &__checkbox {
@@ -38,7 +40,7 @@
         width: 0;
         position: fixed;
         top: 0;
-       left: 0;
+        left: 0;
         z-index: 1500;
         //met opacity alone kom je er niet, want al zie je niks, de links blijven nog werken (je ziet af en toe het klikhandje
         opacity: 0;
@@ -108,4 +110,64 @@
         opacity: 1;
         width: 100%;
     }
+
+    //ICON
+    &__icon {
+        position: relative;
+        margin-top: 3.5rem;
+
+        &,
+        &:before,
+        &:after {
+
+            width: 3rem;
+            height: 2px;
+            background-color: $color-grey-dark-3;
+            display: inline-block;
+            transition: all .2s;
+
+
+        }
+
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            left:0;
+            
+
+
+        }
+
+        &::before{top:-.8rem;}
+
+        &::after{top:.8rem;}
+
+    }
+
+    &__button:hover &__icon::before{
+        top:-1rem;
+    }
+    &__button:hover &__icon::after{
+        top:1rem;
+    }
+
+// de middelste lijn van de button invisible maken ndat men op de button heeft geklikt
+    &__checkbox:checked + &__button &__icon {
+        background-color: transparent;
+
+    }
+
+    &__checkbox:checked + &__button &__icon::after {
+       top:0;
+       transform: rotate(-45deg);
+
+    }
+
+    &__checkbox:checked + &__button &__icon::before {
+        top:0;
+        transform: rotate(45deg);
+
+    }
+
 }
