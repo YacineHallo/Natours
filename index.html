@@ -42,7 +42,7 @@
                 <span class="heading-primary--main">outdoors</span>
                 <span class="heading-primary--sub">is where life happens</span>
             </h1>
-            <a href="#" class="btn btn-white btn--animat">Discover our tours</a>
+            <a href="#section-tours" class="btn btn-white btn--animat">Discover our tours</a>
         </div>
     </header>
 
@@ -68,7 +68,7 @@
                     <p class="paragraph">Lorem, ipsum dolor sit amet consectetur adipisicing Lorem ipsum dolor, sit amet
                         consectetur adipisicing elit. Praesentium, provident ipsam? Earum recusandae unde laborum totam
                         architecto fuga, quisquam eius.</p>
-                    <a href="#" class="btn-text">Leran more &rarr;</a>
+                    <a href="#" class="btn-text">Learn more &rarr;</a>
 
                 </div>
                 <div class="col-1-2">
@@ -122,7 +122,7 @@
                 </div>
             </div>
         </section>
-        <section class="section-tours">
+        <section class="section-tours" id="section-tours">
             <!--  deze u-center-text hieronder is om de h2 te centreren... -->
             <div class="u-center-text u-margin-bottom-big">
                 <h2 class="heading-secondary"> Most popular tours</h2>
@@ -166,7 +166,7 @@
                                     <p class="card__price-only">Only</p>
                                     <p class="card__price-value">&297</p>
                                 </div>
-                                <a href="#" class="btn btn-white">Book now!</a>
+                                <a href="#popup" class="btn btn-white">Book now!</a>
                             </div>
                         </div>
                     </div>
@@ -210,7 +210,7 @@
                                     <p class="card__price-only">Only</p>
                                     <p class="card__price-value">&497</p>
                                 </div>
-                                <a href="#" class="btn btn-white">Book now!</a>
+                                <a href="#popup" class="btn btn-white">Book now!</a>
                             </div>
                         </div>
                     </div>
@@ -254,7 +254,7 @@
                                     <p class="card__price-only">Only</p>
                                     <p class="card__price-value">&897</p>
                                 </div>
-                                <a href="#" class="btn btn-white">Book now!</a>
+                                <a href="#popup" class="btn btn-white">Book now!</a>
                             </div>
                         </div>
 
@@ -396,6 +396,31 @@
 </div>
 
     </footer>
+
+      <!-- POP UPS -->
+      <!-- Zie scss popup > vanwege opactity 0 en visibility hidden zie je de pop up niet > echter 
+zie  in scss popup:target{}, wanneer de popup het target is (dus men springt naar id="popup"
+dan gaat de opacity naar 1 en wordt alles weer zichtbaar. -->
+      <div class="popup" id="popup">
+        <div class="popup__content">
+           <div class="popup__left">
+            <img src="img/nat-8.jpg" alt="8" class="popup__img">    
+            <img src="img/nat-9.jpg" alt="9" class="popup__img">      
+           </div>
+           <div class="popup__right">
+            <a href="#section-tours" class="popup__close">&times;</a>
+            <h2 class="heading-secondary u-margin-bottom-small">Start booking now</h2> 
+            <h3 class="heading-tertiary u-margin-bottom-small">Please read or something like that</h3>
+            <p class="popup__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, nemo at veritatis aliquam nihil ab. Accusamus ullam voluptate asperiores saepe.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis incidunt perspiciatis soluta voluptate, porro at laudantium aperiam nihil maiores fuga!
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum sint quidem saepe maiores porro qui inventore error et ullam cupiditate ex, placeat eligendi dolorum. Quas distinctio mollitia sit veniam error autem deleniti voluptas facilis suscipit minima vel atque aperiam quam asperiores iusto qui, consectetur, beatae hic. Corporis ducimus debitis maiores? Ea consequatur reprehenderit et quia, facere nobis natus, ab iusto a sint totam eveniet. Laudantium ab, nemo consequatur id nam illo alias esse animi at natus ut expedita deleniti quos. Iure officiis veritatis, nisi modi enim voluptate reiciendis deserunt laudantium exercitationem voluptatum numquam nesciunt labore vel cumque eius aliquid ipsum.
+            </p>
+            <button class="popup__header btn btn-green">Book now</button>
+
+        </div>
+        </div>  
+    </div>
 
 
     <!--   je kunt de grid altijd weer treug zien 
